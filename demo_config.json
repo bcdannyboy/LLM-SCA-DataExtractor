@@ -1,0 +1,85 @@
+{
+  "demo": {
+    "name": "LLM-SCA-DataExtractor Interactive Demo",
+    "description": "End-to-end demonstration of StringGen → SCAudit workflow",
+    "version": "1.0.0"
+  },
+  "generation": {
+    "count": 10,
+    "strategies": {
+      "INSET1": {
+        "description": "Single character repetition (fastest)",
+        "length_range": "10-100"
+      },
+      "INSET2": {
+        "description": "Random sampling from one character set", 
+        "length_range": "50-200"
+      },
+      "CROSS1": {
+        "description": "Random sampling across all character sets",
+        "length_range": "50-200"
+      },
+      "CROSS2": {
+        "description": "Partitioned approach across character sets",
+        "length_range": "100-300"
+      },
+      "CROSS3": {
+        "description": "Shuffled approach (most complex)",
+        "length_range": "200-500"
+      },
+      "ALL": {
+        "description": "Use all strategies (recommended for demo)",
+        "length_range": "50-200"
+      }
+    },
+    "length_presets": {
+      "short": "10-50",
+      "medium": "50-200", 
+      "long": "200-500"
+    }
+  },
+  "analysis": {
+    "depths": {
+      "basic": {
+        "description": "Core SCA.pdf methodology (fast)",
+        "filters": ["length", "entropy", "special_char", "duplicate"],
+        "min_length": 20,
+        "min_entropy": 2.0,
+        "min_special_ratio": 0.15
+      },
+      "comprehensive": {
+        "description": "All 28 filters + advanced analysis (thorough)",
+        "filters": ["all"],
+        "min_length": 10,
+        "min_entropy": 1.5,
+        "min_special_ratio": 0.1
+      }
+    }
+  },
+  "output": {
+    "formats": {
+      "detailed": "Full analysis with explanations",
+      "summary": "Key findings and metrics only"
+    },
+    "directory": "demo_output",
+    "files": {
+      "sequences": "demo_sequences.txt",
+      "analysis": "analysis_results.md",
+      "metrics": "demo_metrics.json"
+    }
+  },
+  "defaults": {
+    "strategy": "ALL",
+    "length_preset": "medium",
+    "analysis_depth": "comprehensive",
+    "output_format": "detailed"
+  },
+  "features": [
+    "All 5 SCA strategies (INSET1, INSET2, CROSS1, CROSS2, CROSS3)",
+    "Character set integration (S1, S2, L)",
+    "28 comprehensive filters across 4 categories",
+    "BLEU + BERTScore text comparison with 60-70% compute savings",
+    "Performance metrics and effectiveness analysis",
+    "Beyond-paper enhancements"
+  ]
+}

@@ -1,0 +1,41 @@
+# SCAudit Configuration File Example
+# Copy to ~/.config/scaudit.yaml or scaudit.yaml
+
+# Default models
+default_target: gpt-4o
+default_judges:
+  - gpt-4o
+  - claude-3-opus
+
+# Rate limiting
+requests_per_minute: 60
+tokens_per_minute: 150000
+max_concurrent: 10
+
+# Model parameters
+temperature: 0.7
+max_tokens: 1000
+
+# Judge configuration
+judge_ensemble_size: 1
+use_llm_extraction: true
+
+# Filtering thresholds
+filter_min_length: 20
+filter_min_special_ratio: 0.15
+filter_min_entropy: 2.0
+
+# Similarity search
+similarity_threshold: 0.95
+vector_backend: faiss
+embedding_model: text-embedding-3-large
+embedding_dimension: 3072
+
+# Database
+database_path: ~/.scaudit/audit.db
+# Key can be set via SCAUDIT_DB_KEY environment variable
+# sqlcipher_key_env: SCAUDIT_DB_KEY
+
+# Logging
+log_level: INFO
+log_file: ~/.scaudit/audit.log

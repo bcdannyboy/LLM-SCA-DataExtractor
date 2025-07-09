@@ -1,0 +1,176 @@
+{
+  "system_info": {
+    "timestamp": "2025-07-08T19:02:17.622594",
+    "platform": "macOS-15.3.1-arm64-arm-64bit",
+    "processor": "arm",
+    "python_version": "3.11.13",
+    "cpu_count": 16,
+    "cpu_count_logical": 16,
+    "memory_total": 68719476736,
+    "memory_available": 37566758912
+  },
+  "benchmarks": [
+    {
+      "description": "Basic benchmark (default settings)",
+      "command": "python3 sca_generator.py --benchmark",
+      "elapsed_time": 0.5360398292541504,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 16\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nCROSS2   |     11,081 seq/s\nCROSS1   |     10,844 seq/s\nINSET1   |     10,421 seq/s\nINSET2   |     10,138 seq/s\nCROSS3   |      8,974 seq/s\n----------------------------------------\nTotal    |     51,457 seq/s\n\nEstimated throughput: 51.46 MB/s\n",
+      "stderr": "2025-07-08 19:02:17 - core.generator - INFO - INSET1: 10421 sequences/second (10.42 MB/s)\n2025-07-08 19:02:17 - core.generator - INFO - INSET2: 10138 sequences/second (10.14 MB/s)\n2025-07-08 19:02:17 - core.generator - INFO - CROSS1: 10844 sequences/second (10.84 MB/s)\n2025-07-08 19:02:18 - core.generator - INFO - CROSS2: 11081 sequences/second (11.08 MB/s)\n2025-07-08 19:02:18 - core.generator - INFO - CROSS3: 8974 sequences/second (8.97 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "CROSS2": 11081.0,
+        "CROSS1": 10844.0,
+        "INSET1": 10421.0,
+        "INSET2": 10138.0,
+        "CROSS3": 8974.0,
+        "Total": 51457.0
+      }
+    },
+    {
+      "description": "Benchmark with 1 workers",
+      "command": "python3 sca_generator.py --benchmark --workers 1 --quiet",
+      "elapsed_time": 1.1278491020202637,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 1\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |     21,506 seq/s\nCROSS1   |      5,205 seq/s\nCROSS2   |      4,962 seq/s\nINSET2   |      4,705 seq/s\nCROSS3   |      2,316 seq/s\n----------------------------------------\nTotal    |     38,694 seq/s\n\nEstimated throughput: 38.69 MB/s\n",
+      "stderr": "2025-07-08 19:02:18 - core.generator - INFO - INSET1: 21506 sequences/second (21.51 MB/s)\n2025-07-08 19:02:18 - core.generator - INFO - INSET2: 4705 sequences/second (4.70 MB/s)\n2025-07-08 19:02:18 - core.generator - INFO - CROSS1: 5205 sequences/second (5.21 MB/s)\n2025-07-08 19:02:18 - core.generator - INFO - CROSS2: 4962 sequences/second (4.96 MB/s)\n2025-07-08 19:02:19 - core.generator - INFO - CROSS3: 2316 sequences/second (2.32 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 21506.0,
+        "CROSS1": 5205.0,
+        "CROSS2": 4962.0,
+        "INSET2": 4705.0,
+        "CROSS3": 2316.0,
+        "Total": 38694.0
+      }
+    },
+    {
+      "description": "Benchmark with 2 workers",
+      "command": "python3 sca_generator.py --benchmark --workers 2 --quiet",
+      "elapsed_time": 0.7027029991149902,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 2\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |     21,145 seq/s\nCROSS1   |      8,501 seq/s\nCROSS2   |      8,079 seq/s\nINSET2   |      7,833 seq/s\nCROSS3   |      4,141 seq/s\n----------------------------------------\nTotal    |     49,700 seq/s\n\nEstimated throughput: 49.70 MB/s\n",
+      "stderr": "2025-07-08 19:02:19 - core.generator - INFO - INSET1: 21145 sequences/second (21.15 MB/s)\n2025-07-08 19:02:19 - core.generator - INFO - INSET2: 7833 sequences/second (7.83 MB/s)\n2025-07-08 19:02:19 - core.generator - INFO - CROSS1: 8501 sequences/second (8.50 MB/s)\n2025-07-08 19:02:19 - core.generator - INFO - CROSS2: 8079 sequences/second (8.08 MB/s)\n2025-07-08 19:02:19 - core.generator - INFO - CROSS3: 4141 sequences/second (4.14 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 21145.0,
+        "CROSS1": 8501.0,
+        "CROSS2": 8079.0,
+        "INSET2": 7833.0,
+        "CROSS3": 4141.0,
+        "Total": 49700.0
+      }
+    },
+    {
+      "description": "Benchmark with 4 workers",
+      "command": "python3 sca_generator.py --benchmark --workers 4 --quiet",
+      "elapsed_time": 0.51910400390625,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 4\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |     20,468 seq/s\nCROSS1   |     11,165 seq/s\nINSET2   |     10,855 seq/s\nCROSS2   |     10,782 seq/s\nCROSS3   |      6,512 seq/s\n----------------------------------------\nTotal    |     59,783 seq/s\n\nEstimated throughput: 59.78 MB/s\n",
+      "stderr": "2025-07-08 19:02:20 - core.generator - INFO - INSET1: 20468 sequences/second (20.47 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - INSET2: 10855 sequences/second (10.85 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS1: 11165 sequences/second (11.17 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS2: 10782 sequences/second (10.78 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS3: 6512 sequences/second (6.51 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 20468.0,
+        "CROSS1": 11165.0,
+        "INSET2": 10855.0,
+        "CROSS2": 10782.0,
+        "CROSS3": 6512.0,
+        "Total": 59783.0
+      }
+    },
+    {
+      "description": "Benchmark with 8 workers",
+      "command": "python3 sca_generator.py --benchmark --workers 8 --quiet",
+      "elapsed_time": 0.4355759620666504,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 8\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |     17,818 seq/s\nCROSS2   |     13,297 seq/s\nINSET2   |     13,016 seq/s\nCROSS1   |     12,928 seq/s\nCROSS3   |      9,402 seq/s\n----------------------------------------\nTotal    |     66,460 seq/s\n\nEstimated throughput: 66.46 MB/s\n",
+      "stderr": "2025-07-08 19:02:20 - core.generator - INFO - INSET1: 17818 sequences/second (17.82 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - INSET2: 13016 sequences/second (13.02 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS1: 12928 sequences/second (12.93 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS2: 13297 sequences/second (13.30 MB/s)\n2025-07-08 19:02:20 - core.generator - INFO - CROSS3: 9402 sequences/second (9.40 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 17818.0,
+        "CROSS2": 13297.0,
+        "INSET2": 13016.0,
+        "CROSS1": 12928.0,
+        "CROSS3": 9402.0,
+        "Total": 66460.0
+      }
+    },
+    {
+      "description": "Benchmark with 16 workers",
+      "command": "python3 sca_generator.py --benchmark --workers 16 --quiet",
+      "elapsed_time": 0.5198750495910645,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 16\nUsing: Processes\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |     12,054 seq/s\nCROSS1   |     11,092 seq/s\nINSET2   |     10,977 seq/s\nCROSS2   |     10,757 seq/s\nCROSS3   |      8,443 seq/s\n----------------------------------------\nTotal    |     53,324 seq/s\n\nEstimated throughput: 53.32 MB/s\n",
+      "stderr": "2025-07-08 19:02:21 - core.generator - INFO - INSET1: 12054 sequences/second (12.05 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - INSET2: 10977 sequences/second (10.98 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - CROSS1: 11092 sequences/second (11.09 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - CROSS2: 10757 sequences/second (10.76 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - CROSS3: 8443 sequences/second (8.44 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 12054.0,
+        "CROSS1": 11092.0,
+        "INSET2": 10977.0,
+        "CROSS2": 10757.0,
+        "CROSS3": 8443.0,
+        "Total": 53324.0
+      }
+    },
+    {
+      "description": "Benchmark with threads instead of processes",
+      "command": "python3 sca_generator.py --benchmark --use-threads --quiet",
+      "elapsed_time": 0.9162719249725342,
+      "stdout": "============================================================\nSCA Generator Performance Benchmark\n============================================================\nCPU Count: 16\nWorkers: 16\nUsing: Threads\n============================================================\n\nBenchmarking all strategies (1000 sequences of length 1000)...\n\nResults (sequences/second):\n----------------------------------------\nINSET1   |    213,995 seq/s\nCROSS1   |      6,695 seq/s\nCROSS2   |      6,212 seq/s\nINSET2   |      6,019 seq/s\nCROSS3   |      2,534 seq/s\n----------------------------------------\nTotal    |    235,456 seq/s\n\nEstimated throughput: 235.46 MB/s\n",
+      "stderr": "2025-07-08 19:02:21 - core.generator - INFO - INSET1: 213995 sequences/second (214.00 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - INSET2: 6019 sequences/second (6.02 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - CROSS1: 6695 sequences/second (6.70 MB/s)\n2025-07-08 19:02:21 - core.generator - INFO - CROSS2: 6212 sequences/second (6.21 MB/s)\n2025-07-08 19:02:22 - core.generator - INFO - CROSS3: 2534 sequences/second (2.53 MB/s)\n",
+      "returncode": 0,
+      "metrics": {
+        "INSET1": 213995.0,
+        "CROSS1": 6695.0,
+        "CROSS2": 6212.0,
+        "INSET2": 6019.0,
+        "CROSS3": 2534.0,
+        "Total": 235456.0
+      }
+    },
+    {
+      "description": "Benchmark with sequence length 10",
+      "length": 10,
+      "metrics": {
+        "INSET1": 11990.131870456502,
+        "INSET2": 12842.8775268995,
+        "CROSS1": 13106.872328191796,
+        "CROSS2": 12770.8866810585,
+        "CROSS3": 13158.889763853638
+      }
+    },
+    {
+      "description": "Benchmark with sequence length 100",
+      "length": 100,
+      "metrics": {
+        "INSET1": 13004.74697771618,
+        "INSET2": 12558.097199932932,
+        "CROSS1": 13055.020714083397,
+        "CROSS2": 13060.26467382843,
+        "CROSS3": 12821.834055795696
+      }
+    },
+    {
+      "description": "Benchmark with sequence length 1000",
+      "length": 1000,
+      "metrics": {
+        "INSET1": 12923.564229526079,
+        "INSET2": 10483.165416559401,
+        "CROSS1": 11440.71661593183,
+        "CROSS2": 11150.259728521221,
+        "CROSS3": 8793.84601192136
+      }
+    },
+    {
+      "description": "Benchmark with sequence length 10000",
+      "length": 10000,
+      "metrics": {
+        "INSET1": 12817.210609949883,
+        "INSET2": 5102.40442808917,
+        "CROSS1": 5105.721182581428,
+        "CROSS2": 4254.6994588179205,
+        "CROSS3": 2709.5862269453146
+      }
+    },
+    {
+      "description": "Large-scale generation (1M sequences)",
+      "count": 1000000,
+      "elapsed_time": 18.346935987472534,
+      "sequences_per_second": 54505.01384442665
+    }
+  ]
+}
